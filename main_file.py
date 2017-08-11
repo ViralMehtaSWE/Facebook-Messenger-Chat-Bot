@@ -54,10 +54,10 @@ while True:
                                     reply=cw.say(message)
                                     if((len(message)>=5) and (message.lower()[0:5]=='@sms:')):
                                         message=message[5:]
-                                        q=ss.login("8096408830","1234")
+                                        q=ss.login("my_phone_no","pass")
                                         msg_txt_=str(client.fetchUserInfo(author_id)[author_id].name)+" has sent you a message(High Priority!): "+message
                                         print "msg_txt_ =", msg_txt_
-                                        ss.sendSMS(q,"8096408830",msg_txt_)
+                                        ss.sendSMS(q,"my_phone_no",msg_txt_)
                                         ss.logout(q)
                                         self.sendMessage("Your Message: "+msg_txt_+"\nhas been delivered via SMS to Viral Mehta's phone...", thread_id=thread_id, thread_type=thread_type)
                                         return
@@ -65,20 +65,20 @@ while True:
                                         reply="Bot program has been terminated...., Viral will reply shortly..\nSMS mode has been activated......Viral will receive all your fb messages as SMS\nNOTE: Manual override feature is yet to be implemented by me :)"
                                         terminated.add(author_id)
                                     if((author_id in all_users)==False):
-                                        q=ss.login("8096408830","1234")
+                                        q=ss.login("my_phone_no","pass")
                                         msg_txt_=str(client.fetchUserInfo(author_id)[author_id].name)+" has sent you a message(First Attmpt!): "+message
                                         print "msg_txt_ =", msg_txt_
-                                        ss.sendSMS(q,"8096408830",msg_txt_)
+                                        ss.sendSMS(q,"my_phone_no",msg_txt_)
                                         ss.logout(q)
                                         all_users.add(author_id)
                                         reply="I am currently unavailabe, you are actually talking to my bot, to terminate the bot, type:'Terminate' without quotes.\n\nTo send fb messages as SMS, type '@SMS:' before writing the message!(It is completely free! ;) ) Example:\n@SMS:Hi!, how are you?\nThe bot code has been initiated, have fun talking to it.. :D\n\n\nCAUTION: The bot can sometimes be very rude (I tried to make it polite) :P\n\n-------------\nConversation with bot begins here: "+reply
                                     print("request =", message, "response =", reply)
                                     self.sendMessage(reply, thread_id=thread_id, thread_type=thread_type)
                                 else:
-                                    q=ss.login("8096408830","1234")
+                                    q=ss.login("my_phone_no","pass")
                                     msg_txt="message from "+str(client.fetchUserInfo(author_id)[author_id].name)+" = "+message
                                     print "msg_txt =", msg_txt
-                                    ss.sendSMS(q,"8096408830",msg_txt)
+                                    ss.sendSMS(q,"my_phone_no",msg_txt)
                                     ss.logout(q)
                                     self.sendMessage("Your Message: "+msg_txt+"\nhas been delivered via SMS to Viral Mehta's phone...", thread_id=thread_id, thread_type=thread_type)
                         return
