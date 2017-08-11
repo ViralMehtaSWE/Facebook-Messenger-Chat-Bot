@@ -87,8 +87,8 @@ while True:
                         if(disabled==False):
                             self.sendMessage("Poor Internet Connectivity Error: To get a reply, please send your message again!", thread_id=thread_id, thread_type=thread_type)
                         continue
-        email="virusmehta@rocketmail.com"
-        password="bits@123"
+        email="my_email_ID"
+        password="my_password"
         chatBot_on=True
         sms_mode_on=True
         client = EchoBot(email, password)
